@@ -63,6 +63,7 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.security.GeneralSecurityException;
+import java.text.DecimalFormat;
 import java.text.NumberFormat;
 import java.util.concurrent.TimeUnit;
 import java.util.regex.Pattern;
@@ -243,12 +244,14 @@ public class WalletUtils {
     return fr.acinq.eclair.CoinUtils.getUnitFromString(prefs.getString(Constants.SETTING_BTC_UNIT, Constants.BTC_CODE));
   }
 
+
+  final static String decSep = String.valueOf(new DecimalFormat().getDecimalFormatSymbols().getDecimalSeparator());
+
   /**
    * Prints a stringified amount in a text view. Decimal part if present is smaller than int part.
    */
   @SuppressLint("SetTextI18n")
   public static void printAmountInView(final TextView view, final String amount, final String direction) {
-    final String decSep = String.valueOf(CoinUtils.COIN_FORMAT().getDecimalFormatSymbols().getDecimalSeparator());
     final String[] amountParts = amount.split(Pattern.quote(decSep));
     if (amountParts.length == 2) {
       view.setText(Html.fromHtml(view.getContext().getString(R.string.pretty_amount_value, direction + amountParts[0] + decSep, amountParts[1])));
