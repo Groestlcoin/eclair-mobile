@@ -54,7 +54,7 @@ public class QRCodeTask extends AsyncTask<String, Integer, Bitmap> {
     this.delegate = delegate;
     this.width = width;
     this.height = height;
-    this.source = "bitcoin:" + source;
+    this.source = "groestlcoin:" + source;
   }
 
   @Override
