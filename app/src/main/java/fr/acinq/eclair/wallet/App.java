@@ -313,7 +313,7 @@ public class App extends Application {
         @Override
         public void onComplete(final Throwable t, final String txId) {
           if (t != null) {
-            log.warn("could not send bitcoin tx {} with cause {}", txId, t.getMessage());
+            log.warn("could not send groestlcoin tx {} with cause {}", txId, t.getMessage());
             if (!(t instanceof AskTimeoutException)) {
               EventBus.getDefault().post(new BitcoinPaymentFailedEvent(t.getLocalizedMessage()));
             }
@@ -321,7 +321,7 @@ public class App extends Application {
         }
       }, this.system.dispatcher());
     } catch (Throwable t) {
-      log.warn("could not send bitcoin tx with cause {}", t.getMessage());
+      log.warn("could not send groestlcoin tx with cause {}", t.getMessage());
       EventBus.getDefault().post(new BitcoinPaymentFailedEvent(t.getLocalizedMessage()));
     }
   }

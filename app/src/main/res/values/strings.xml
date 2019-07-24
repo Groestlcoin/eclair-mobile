@@ -328,8 +328,8 @@
   <!-- //////////////// Send Payment //////////////////// -->
 
   <string name="payment_invalid_lightning">This is not a valid %1$s Lightning payment request.</string>
-  <string name="payment_invalid_onchain">This is not a valid %1$s Bitcoin address.</string>
-  <string name="payment_invalid_generic">This is not a valid payment address.\n\nPlease use a %1$s Bitcoin or Lightning payment request.</string>
+  <string name="payment_invalid_onchain">This is not a valid %1$s Groestlcoin address.</string>
+  <string name="payment_invalid_generic">This is not a valid payment address.\n\nPlease use a %1$s Groestlcoin or Lightning payment request.</string>
   <string name="payment_ln_invalid_chain">This Lightning payment request is not valid on %1$s.</string>
   <string name="payment_ln_expiry_outdated">This payment has expired.</string>
   <string name="payment_pick_onchain">Pay on-chain</string>
@@ -406,8 +406,8 @@
 
   <!-- //////////////// About //////////////////// -->
 
-  <string name="about_general_title">About Eclair Mobile</string>
-  <string name="about_general_text">An advanced Lightning/Bitcoin mobile wallet by ACINQ. It relies on Electrum servers for access to the Bitcoin network.\n\nFees are retrieved from the BitGo API. Exchange rates are retrieved from the Blockchain.info api. Note that this conversion to fiat may not be accurate.\n\nThis software is compliant with the BOLT specifications (Lightning Network standard).</string>
+  <string name="about_general_title">About Groestlcoin Eclair Mobile</string>
+  <string name="about_general_text">An advanced Lightning/Groestlcoin mobile wallet by Hash Engineering Solutions (based on elair mobile by ACINQ). It relies on Electrum servers for access to the Groestlcoin network.\n\nFees are retrieved from the BitGo API. Exchange rates are retrieved from the Blockchain.info api. Note that this conversion to fiat may not be accurate.\n\nThis software is compliant with the BOLT specifications (Lightning Network standard).</string>
   <string name="about_version">Current version</string>
   <string name="about_faq"><![CDATA[
     <p>Any questions? Check <a href="https://github.com/ACINQ/eclair-mobile/wiki/FAQ">the FAQ</a></p>
@@ -430,7 +430,7 @@
 
   <!-- //////////////// Network Infos //////////////////// -->
 
-  <string name="networkinfos_title_bitcoin">Bitcoin Network</string>
+  <string name="networkinfos_title_bitcoin">Groestlcoin Network</string>
   <string name="networkinfos_title_lightning">Lightning Network</string>
   <string name="networkinfos_nodeid_label">Your node id</string>
   <string name="networkinfos_blockcount_label">Block height</string>
@@ -492,7 +492,7 @@
   <string name="prefs_cat_advanced">Advanced</string>
   <string name="prefs_fiat_currency">Fiat currency</string>
   <string name="prefs_fiat_currency_dialog">Display in fiat currency</string>
-  <string name="prefs_btc_unit">Bitcoin unit</string>
+  <string name="prefs_btc_unit">Groestlcoin unit</string>
   <string name="prefs_btc_decimals">Number of decimals shown</string>
   <string name="prefs_change_password">Change the app PIN</string>
   <string name="prefs_change_password_desc">Seed will be re-encrypted with a new PIN</string>
@@ -523,7 +523,7 @@
 
   <!-- //////////////// Scanner messages //////////////////// -->
 
-  <string name="scan_title_invoice">Scan a QR code containing a Bitcoin address or a Lightning payment request.</string>
+  <string name="scan_title_invoice">Scan a QR code containing a Groestlcoin address or a Lightning payment request.</string>
   <string name="scan_title_ln_uri">Scan the address of a Lightning Network node.</string>
 
   <!-- //////////////// Close Channel Dialog /////////////////// -->
@@ -655,7 +655,7 @@
 
   <string name="receivepayment_onchain_title">On-chain</string>
   <string name="receivepayment_lightning_title">Lightning</string>
-  <string name="receivepayment_onchain_address_title">Your Bitcoin address</string>
+  <string name="receivepayment_onchain_address_title">Your Groestlcoin address</string>
   <string name="receivepayment_onchain_image_desc">On-chain address QR Code</string>
   <string name="receivepayment_onchain_wait">Retrieving fresh address…</string>
   <string name="receivepayment_lightning_inbound_disabled">You must enable this feature in the settings first.</string>
@@ -677,7 +677,7 @@
   <string name="receivepayment_lightning_edit_pr">Edit request…</string>
   <string name="receivepayment_lightning_error">Error in payment request…</string>
   <string name="receivepayment_onchain_share">Share this address…</string>
-  <string name="receivepayment_onchain_share_subject">Pay to this Bitcoin address</string>
+  <string name="receivepayment_onchain_share_subject">Pay to this Groestlcoin address</string>
   <string name="receivepayment_lightning_share">Share this payment request…</string>
   <string name="receivepayment_lightning_share_subject">Pay this Lightning payment request</string>
 

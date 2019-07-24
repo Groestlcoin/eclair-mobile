@@ -65,16 +65,16 @@
     <item>USD</item>
   </string-array>
   <string-array name="btc_unit_labels">
-    <item>Satoshi (0.00000001 BTC)</item>
-    <item>Bits (0.000001 BTC)</item>
-    <item>Milli-Bitcoin (0.001 BTC)</item>
-    <item>Bitcoin</item>
+    <item>Gro (0.00000001 GRS)</item>
+    <item>Groestls (0.000001 GRS)</item>
+    <item>Milli-Groestlcoin (0.001 GRS)</item>
+    <item>Groestlcoin</item>
   </string-array>
   <string-array name="btc_unit_values">
-    <item>sat</item>
-    <item>bits</item>
-    <item>mbtc</item>
-    <item>btc</item>
+    <item>gro</item>
+    <item>groestls</item>
+    <item>mgrs</item>
+    <item>grs</item>
   </string-array>
   <string-array name="btc_pattern_labels">
     <item>2 decimals</item>
