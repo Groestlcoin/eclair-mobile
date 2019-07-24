@@ -708,7 +708,7 @@ public class SendPaymentActivity extends EclairActivity {
           final BitcoinURI uri = new BitcoinURI(invoiceAsString);
           runOnUiThread(() -> invoiceReadSuccessfully(Left.apply(uri)));
         } catch (Throwable onchainThrow) {
-          if (invoiceAsString.matches("(bitcoin:)(//){0,1}.*")) {
+          if (invoiceAsString.matches("(groestlcoin:)(//){0,1}.*")) {
             // invoice was intended as an onchain payment
             log.debug("could not read on-chain uri {}", invoiceAsString, onchainThrow);
             runOnUiThread(() -> canNotHandlePayment(getString(R.string.payment_invalid_onchain, chain)));

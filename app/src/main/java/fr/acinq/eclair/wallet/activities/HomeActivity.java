@@ -297,7 +297,7 @@ public class HomeActivity extends EclairActivity implements SharedPreferences.On
     final Uri paymentRequest = intent.getParcelableExtra(EXTRA_PAYMENT_URI);
     if (paymentRequest != null && paymentRequest.getScheme() != null) {
       switch (paymentRequest.getScheme()) {
-        case "bitcoin":
+        case "groestlcoin":
         case "lightning":
           final Intent paymentIntent = new Intent(this, SendPaymentActivity.class);
           paymentIntent.putExtra(SendPaymentActivity.EXTRA_INVOICE, paymentRequest.toString());
