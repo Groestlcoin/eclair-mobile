@@ -102,7 +102,7 @@ public class CheckElectrumWorker extends Worker {
         setup.nodeParams().db().network().close(); // network.sqlite
         setup.nodeParams().db().audit().close(); // audit.sqlite
       } catch (Throwable t) {
-        log.error("could not close at least one database connection opened by check electrum setup", t);
+        log.error("could not close at least one database connection opened by check electrum-grs setup", t);
       }
     }
   }
@@ -113,7 +113,7 @@ public class CheckElectrumWorker extends Worker {
     final Context context = getApplicationContext();
 
     if (!WalletUtils.getEclairDBFile(context).exists()) {
-      log.info("no eclair db file yet, aborting...");
+      log.info("no groestlcoin testnet eclair db file yet, aborting...");
       return Result.success();
     }
 
@@ -134,7 +134,7 @@ public class CheckElectrumWorker extends Worker {
         saveLastCheckResult(context, result);
         return Result.success();
       } catch (Throwable t) {
-        log.error("electrum check has failed: ", t);
+        log.error("electrum-grs check has failed: ", t);
         return Result.failure();
       } finally {
         timestampAttempt(context);
@@ -225,7 +225,7 @@ public class CheckElectrumWorker extends Worker {
   }
 
   public static void schedule() {
-    log.info("scheduling electrum check work");
+    log.info("scheduling electrum-grs check work");
     final PeriodicWorkRequest.Builder work = new PeriodicWorkRequest.Builder(CheckElectrumWorker.class, 22, TimeUnit.HOURS, 12, TimeUnit.HOURS)
       .addTag(ELECTRUM_CHECK_WORKER_TAG);
     WorkManager.getInstance().enqueueUniquePeriodicWork(ELECTRUM_CHECK_WORKER_TAG, ExistingPeriodicWorkPolicy.REPLACE, work.build());

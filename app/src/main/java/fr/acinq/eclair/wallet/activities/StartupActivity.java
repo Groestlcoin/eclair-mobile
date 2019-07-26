@@ -363,7 +363,7 @@ public class StartupActivity extends EclairActivity implements EclairActivity.En
           isStartingNode = false;
           runOnUiThread(() -> showError(getString(R.string.start_error_unreadable_seed), true, true));
         } catch (Throwable t) {
-          log.error("could not start eclair startup task: ", t);
+          log.error("could not start groestlcoin testnet eclair startup task: ", t);
           clearApp();
           isStartingNode = false;
           runOnUiThread(() -> showError(getString(R.string.start_error_generic), true, true));

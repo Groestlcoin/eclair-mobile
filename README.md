@@ -1,18 +1,18 @@
-# Eclair Mobile
+# Groestlcoin Eclair Mobile
 [![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](LICENSE)
 [![Gitter chat](https://img.shields.io/badge/chat-on%20gitter-rose.svg)](https://gitter.im/ACINQ/eclair)
 
-Eclair Mobile is a next generation, Lightning-ready Bitcoin wallet. It can be used as a regular Bitcoin wallet, and can also connect to the Lightning Network for cheap and instant payments.
+Groestlcoin Eclair Mobile is a next generation, Lightning-ready Groestlcoin wallet. It can be used as a regular Groestlcoin wallet, and can also connect to the Lightning Network for cheap and instant payments.
 
-This software is based upon [eclair](https://github.com/ACINQ/eclair), and follows the Lightning Network standard.
+This software is based upon [eclair](https://github.com/groestlcoin/eclair), and follows the Lightning Network standard.
 
 ## Installation
 
-The wallet is available on [Google Play](https://play.google.com/store/apps/details?id=fr.acinq.eclair.wallet), you can also download APKs from the [releases page](https://github.com/ACINQ/eclair-wallet/releases).
+The wallet is available on [Google Play](https://play.google.com/store/apps/details?id=fr.acinq.eclair.wallet), you can also download APKs from the [releases page](https://github.com/groestlcoin/eclair-wallet/releases).
 
 ## Wallet Limitations
 
-- Lightning channels are outbound only: you can pay with LN but you can not receive or forward payments with this wallet. For the complete LN experience, run a full [Eclair Node](https://github.com/ACINQ/eclair).
+- Lightning channels are outbound only: you can pay with LN but you can not receive or forward payments with this wallet. For the complete LN experience, run a full [Groestlcoin Eclair Node](https://github.com/groestlcoin/eclair).
 
 ## Usage with Lightning (on TESTNET)
 
@@ -20,7 +20,7 @@ The wallet is available on [Google Play](https://play.google.com/store/apps/deta
 
 1. Make sure you have funds (swipe to the left from the home screen to display your address and receive funds).
 
-   You can get Testnet bitcoins from [this faucet](https://testnet.manu.backend.hamburg/faucet).
+   You can get Testnet groestlcoins from [this faucet](https://testnet.manu.backend.hamburg/faucet).
 
 2. Swipe to the right from the home screen, and click on the green `+` button
 3. You can now choose to scan/paste the adress of a Lightning Node.
@@ -29,7 +29,7 @@ The wallet is available on [Google Play](https://play.google.com/store/apps/deta
 
 4. Enter the capacity of the channel and click `Open`.
 
-   A transaction will be sent to fund the channel. You can find it in the transactions list as an outbound Bitcoin transaction, with an amount corresponding to the channel's desired capacity.
+   A transaction will be sent to fund the channel. You can find it in the transactions list as an outbound Groestlcoin transaction, with an amount corresponding to the channel's desired capacity.
    At this point the channel will have a `WAIT_FOR_CONFIRMED` state and can not be used yet.
 
 5. Once the channel reaches the `NORMAL` state (the funding transaction has 2+ confirmations) you can send payments!
@@ -60,13 +60,13 @@ The wallet is available on [Google Play](https://play.google.com/store/apps/deta
 
    If the channel is not in a `NORMAL` state, the closing will be uncooperative. It means that you will have to wait for 144 blocks to receive your funds. This is a Lightning Network specification to prevent theft.
 
-3. You will receive a Bitcoin transaction with the leftover balance of the channel.
+3. You will receive a Groestlcoin transaction with the leftover balance of the channel.
 
 ## Developers
 
 1. clone this project
-2. clone [eclair](https://github.com/ACINQ/eclair) and checkout the `android` branch.
+2. clone [groestlcoin eclair](https://github.com/groestlcoin/eclair) and checkout the `android` branch.
 
-   Follow the steps [here](https://github.com/ACINQ/eclair/blob/android/BUILD.md) to build the eclair-core library.
+   Follow the steps [here](https://github.com/groestlcoin/eclair/blob/android/BUILD.md) to build the eclair-core library.
 
-3. Open the Eclair Mobile project with Android studio. You should now be able to install it on your phone/on an emulator.
+3. Open the Groestlcoin Eclair Mobile project with Android studio. You should now be able to install it on your phone/on an emulator.

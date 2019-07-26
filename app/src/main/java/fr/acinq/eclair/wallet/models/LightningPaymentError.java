@@ -75,7 +75,7 @@ public class LightningPaymentError implements Parcelable {
   }
 
   /**
-   * Parses a {@link PaymentLifecycle.PaymentFailure} sent by eclair core and generates a {@link LightningPaymentError}.
+   * Parses a {@link PaymentLifecycle.PaymentFailure} sent by groestlcoin testnet eclair core and generates a {@link LightningPaymentError}.
    * According to the failure type, the resulting error may contain a list of the nodes in the failed route.
    * The type of the error is always set, as well as the cause, be it unknown.
    *

@@ -40,8 +40,8 @@ public interface Constants {
   /**
    * Minimal blockchain height that the wallet should reach before being considered ready (value depends on the chain used).
    */
-  long MIN_BLOCK_HEIGHT = BuildConfig.CHAIN == "mainnet" ? 500 * 1000L
-    : BuildConfig.CHAIN == "testnet" ? 1000 * 1000L
+  long MIN_BLOCK_HEIGHT = BuildConfig.CHAIN == "mainnet" ? 2500 * 1000L
+    : BuildConfig.CHAIN == "testnet" ? 1225 * 1000L
     : 0;
 
   /* ----------- PERMISSIONS & REQUEST CODES ------------ */
@@ -56,15 +56,15 @@ public interface Constants {
 
   /* ----------- DIR & FILES NAMES ------------ */
 
-  String ECLAIR_BACKUP_DIR = "Eclair Mobile";
-  String ECLAIR_DATADIR = "eclair-wallet-data";
-  String ECLAIR_DB_FILE = "eclair.sqlite";
-  String ECLAIR_DB_FILE_BAK = "eclair.sqlite.bak";
-  String NETWORK_DB_FILE = "network.sqlite";
-  String WALLET_DB_FILE = "wallet.sqlite";
+  String ECLAIR_BACKUP_DIR = "Groestlcoin Testnet Eclair Mobile";
+  String ECLAIR_DATADIR = "tgrs-eclair-wallet-data";
+  String ECLAIR_DB_FILE = "tgrs-eclair.sqlite";
+  String ECLAIR_DB_FILE_BAK = "tgrs-eclair.sqlite.bak";
+  String NETWORK_DB_FILE = "tgrs-network.sqlite";
+  String WALLET_DB_FILE = "tgrs-wallet.sqlite";
   String LOGS_DIR = "logs";
-  String CURRENT_LOG_FILE = "eclair-wallet.log";
-  String ARCHIVED_LOG_FILE = "eclair-wallet.archive-%i.log";
+  String CURRENT_LOG_FILE = "tgrs-eclair-wallet.log";
+  String ARCHIVED_LOG_FILE = "tgrs-eclair-wallet.archive-%i.log";
 
   /* ----------- SETTINGS ------------ */
 
@@ -182,8 +182,8 @@ public interface Constants {
   /* ------------ API URLS ------------ */
 
   String PRICE_RATE_API = "https://blockchain.info/fr/ticker";
-  NodeURI ACINQ_NODE_URI = NodeURI.parse("03933884aaf1d6b108397e5efe5c86bcf2d8ca8d2f700eda99db9214fc2712b134@endurance.acinq.co:9735");
-  String WALLET_CONTEXT_SOURCE = "https://acinq.co/mobile/walletcontext.json";
+  NodeURI ACINQ_NODE_URI = NodeURI.parse("0384dee0ec597a7b8235ccf56c68ffa0af5dae72b3455aa3ecb81c4fc4eef9ef2c@95.179.140.39:9735");
+  String WALLET_CONTEXT_SOURCE = "https://groestlcoin.org/walletcontext.json";
   String DEFAULT_ONCHAIN_EXPLORER = "https://api.blockcypher.com/v1/btc/test3/txs/";
 
 }

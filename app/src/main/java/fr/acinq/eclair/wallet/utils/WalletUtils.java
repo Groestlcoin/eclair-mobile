@@ -535,7 +535,7 @@ public class WalletUtils {
           return ConfigFactory.parseMap(conf);
         }
       } catch (Exception e) {
-        log.error("could not read custom electrum address=" + prefsElectrumAddress, e);
+        log.error("could not read custom electrum-grs address=" + prefsElectrumAddress, e);
       }
     }
     return ConfigFactory.empty();
