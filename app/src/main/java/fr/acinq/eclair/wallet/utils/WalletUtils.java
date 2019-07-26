@@ -531,7 +531,7 @@ public class WalletUtils {
           conf.put("eclair.electrum.host", address.getHost());
           conf.put("eclair.electrum.port", address.getPort());
           // custom server certificate must be valid
-          conf.put("eclair.electrum.ssl", "strict");
+          conf.put("eclair.electrum.ssl", "loose");
           return ConfigFactory.parseMap(conf);
         }
       } catch (Exception e) {
