@@ -184,6 +184,6 @@ public interface Constants {
   String PRICE_RATE_API = "https://blockchain.info/fr/ticker";
   NodeURI ACINQ_NODE_URI = NodeURI.parse("0384dee0ec597a7b8235ccf56c68ffa0af5dae72b3455aa3ecb81c4fc4eef9ef2c@95.179.140.39:9735");
   String WALLET_CONTEXT_SOURCE = "https://groestlcoin.org/walletcontext.json";
-  String DEFAULT_ONCHAIN_EXPLORER = "https://api.blockcypher.com/v1/btc/test3/txs/";
+  String DEFAULT_ONCHAIN_EXPLORER = "https://chainz.cryptoid.info/grs-test/tx.dws?";
 
 }

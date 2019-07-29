@@ -414,7 +414,7 @@ public class App extends Application {
     if (pingNode != null) pingNode.cancel();
     if (appKit == null || appKit.eclairKit == null || hasChannelWithACINQ()) return;
     if (system != null) {
-      log.info("scheduling connection to ACINQ node");
+      log.info("scheduling connection to Groestlcoin node");
       pingNode = system.scheduler().schedule(
         Duration.Zero(), Duration.create(10, TimeUnit.MINUTES),
         () -> {

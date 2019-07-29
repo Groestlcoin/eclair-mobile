@@ -42,7 +42,7 @@
   <string name="home_channel_paste_uri">Paste a node URI</string>
   <string name="home_channel_scan_uri">Scan a node URI</string>
   <string name="home_channel_random">Random node</string>
-  <string name="home_channel_acinq">ACINQ node</string>
+  <string name="home_channel_acinq">Groestlcoin node</string>
   <string name="home_sync_progress">%1$d%%</string>
   <string name="home_sync_progress_desc">Updating the lightning network map</string>
   <string name="home_sync_progress_about"><![CDATA[
@@ -339,9 +339,9 @@
   <string name="payment_empty_wallet">Empty wallet</string>
   <string name="payment_empty_wallet_disclaimer">Funds in your Lightning channels will not be included. You might want to close them first.</string>
   <string name="payment_fees_custom">Custom</string>
-  <string name="payment_fees_slow">Slow (12h)</string>
-  <string name="payment_fees_medium">Medium (2h)</string>
-  <string name="payment_fees_fast">Fast (20min)</string>
+  <string name="payment_fees_slow">Slow (3min)</string>
+  <string name="payment_fees_medium">Medium (2min)</string>
+  <string name="payment_fees_fast">Fast (1min)</string>
   <string name="payment_description">Desc.</string>
   <string name="payment_destination_address">To</string>
   <string name="payment_fees">Fees</string>
@@ -440,7 +440,7 @@
   <string name="networkinfos_electrum_address_set_custom">Set custom server…</string>
   <string name="networkinfos_electrum_address_change_custom">Change custom server…</string>
   <string name="networkinfos_electrum_confirm_message"><![CDATA[You will now connect to <b>%1$s</b><br/><br/>Restarting…]]></string>
-  <string name="networkinfos_electrum_confirm_message_default"><![CDATA[Restarting with preset electrum…]]></string>
+  <string name="networkinfos_electrum_confirm_message_default"><![CDATA[Restarting with preset electrum-grs…]]></string>
   <string name="networkinfos_block"><![CDATA[%1$s&nbsp;&nbsp;<font color="#888888"><small>//&nbsp;&nbsp;%2$s</small></font>]]></string>
   <string name="networkinfos_networkchannels_label">Known channels in network</string>
   <string name="networkinfos_wallet_title">Wallet</string>
@@ -474,7 +474,7 @@
 
   <!-- //////////////// General //////////////////// -->
 
-  <string name="btc_fee_unit">sat/byte</string>
+  <string name="btc_fee_unit">gro/byte</string>
 
   <!-- //////////////// Pin dialogs //////////////////// -->
 
