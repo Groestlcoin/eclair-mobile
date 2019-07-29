@@ -83,7 +83,7 @@ public class BitcoinURI {
       this.lightning = PaymentRequest.read(lightningParam);
     }
 
-    // -- read and validate amount field parameter. Amount is in BTC in the URI, and is converted to Satoshi,
+    // -- read and validate amount field parameter. Amount is in GRS in the URI, and is converted to Gro,
     final String amountParam = uri.getQueryParameter("amount");
     if (Strings.isNullOrEmpty(amountParam)) {
       this.amount = null;

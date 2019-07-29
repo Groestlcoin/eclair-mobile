@@ -129,8 +129,8 @@ public interface Constants {
 
   /* ----------- COINS ------------ */
 
-  String SATOSHI_CODE = "sat";
-  String BTC_CODE = "btc";
+  String SATOSHI_CODE = "gro";
+  String BTC_CODE = "grs";
 
   /* ----------- FEE RATING ------------ */
 
