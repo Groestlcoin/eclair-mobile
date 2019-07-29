@@ -500,9 +500,9 @@
   <string name="prefs_lightning_max_fee">Lightning Fee Protection</string>
   <string name="prefs_lightning_max_fee_desc">Prevent making a Lightning payment if the fee would be too high. Limit is set to 3% (with a tolerance if fee is smaller than 21 gros to allow tiny payments).</string>
   <string name="prefs_lightning_enable_inbound">Enable receive over Lightning</string>
-  <string name="prefs_lightning_enable_inbound_desc">If this feature is enabled, you need to make sure that your phone doesn\'t stay without internet connectivity for more than two weeks straight.</string>
+  <string name="prefs_lightning_enable_inbound_desc">If this feature is enabled, you need to make sure that your phone doesn\'t stay without internet connectivity for more than 1,5 days straight.</string>
   <string name="prefs_lightning_inbound_warning_title">Notice</string>
-  <string name="prefs_lightning_inbound_warning_message">Congratulations! You can now receive payment over Lightning.\n\nGroestlcoin Testnet Eclair Mobile will watch your channels in the background and will warn you if needed.\n\nNote that you need to make sure that your phone doesn\'t stay without internet connectivity for more than two weeks straight.</string>
+  <string name="prefs_lightning_inbound_warning_message">Congratulations! You can now receive payment over Lightning.\n\nGroestlcoin Testnet Eclair Mobile will watch your channels in the background and will warn you if needed.\n\nNote that you need to make sure that your phone doesn\'t stay without internet connectivity for more than 1,5 days straight.</string>
   <string name="prefs_lightning_error_not_authorized_title">Incompatible channels</string>
   <string name="prefs_lightning_error_not_authorized_message">Some of your existing channels have a "retaliation window" smaller than %1$d blocks, please close these channels first.\n\nAll Newly created channels will have a safe configuration.</string>
   <string name="prefs_payment_request_default_description">Payment request default description</string>
