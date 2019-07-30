@@ -115,6 +115,7 @@ public class App extends Application {
   private Cancellable pingNode;
 
   private Cancellable exchangeRatePoller;
+  private Cancellable exchangeRatePollerGRS;
   private final OkHttpClient httpClient = new OkHttpClient();
 
   private AtomicReference<ElectrumState> electrumState = new AtomicReference<>(null);
@@ -458,6 +459,9 @@ public class App extends Application {
     if (exchangeRatePoller != null) {
       exchangeRatePoller.cancel();
     }
+    if (exchangeRatePollerGRS != null) {
+      exchangeRatePollerGRS.cancel();
+    }
     if (system != null) {
       exchangeRatePoller = system.scheduler().schedule(
         Duration.Zero(), Duration.create(20, TimeUnit.MINUTES),
@@ -477,6 +481,38 @@ public class App extends Application {
               if (body != null) {
                 try {
                   WalletUtils.handleExchangeRateResponse(prefs, body);
+                  prefs.edit().putLong(Constants.SETTING_LAST_KNOWN_RATE_TIMESTAMP, System.currentTimeMillis()).apply();
+                } catch (Throwable t) {
+                  log.error("could not read exchange rate response body", t);
+                } finally {
+                  body.close();
+                }
+              } else {
+                log.warn("exchange rate body is null");
+              }
+            }
+          }
+        }),
+        system.dispatcher());
+
+      exchangeRatePollerGRS = system.scheduler().schedule(
+        Duration.Zero(), Duration.create(20, TimeUnit.MINUTES),
+        () -> httpClient.newCall(new Request.Builder().url(Constants.PRICE_RATE_GRS_API).build()).enqueue(new Callback() {
+          @Override
+          public void onFailure(@NonNull Call call, @NonNull IOException e) {
+            log.warn("exchange rate call failed with cause {}", e.getLocalizedMessage());
+          }
+
+          @Override
+          public void onResponse(@NonNull Call call, @NonNull Response response) {
+            log.debug("exchange rate api responded with {}", response);
+            if (!response.isSuccessful()) {
+              log.warn("exchange rate query responds with error code {}", response.code());
+            } else {
+              final ResponseBody body = response.body();
+              if (body != null) {
+                try {
+                  WalletUtils.handleGRSExchangeRateResponse(prefs, body);
                   prefs.edit().putLong(Constants.SETTING_LAST_KNOWN_RATE_TIMESTAMP, System.currentTimeMillis()).apply();
                 } catch (Throwable t) {
                   log.error("could not read exchange rate response body", t);
