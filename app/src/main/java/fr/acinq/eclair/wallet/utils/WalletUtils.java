@@ -159,7 +159,7 @@ public class WalletUtils {
       String uri = PreferenceManager.getDefaultSharedPreferences(v.getContext())
         .getString(Constants.SETTING_ONCHAIN_EXPLORER, Constants.DEFAULT_ONCHAIN_EXPLORER);
       try {
-        if (uri != null && !uri.endsWith("/")) {
+        if (uri != null && !uri.endsWith("/") && !uri.endsWith("?")) {
           uri += "/";
         }
         Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(uri + txId));
@@ -297,7 +297,9 @@ public class WalletUtils {
   }
 
   public static CoinUnit getPreferredCoinUnit(final SharedPreferences prefs) {
-    return fr.acinq.eclair.CoinUtils.getUnitFromString(prefs.getString(Constants.SETTING_BTC_UNIT, Constants.BTC_CODE));
+    String code = prefs.getString(Constants.SETTING_BTC_UNIT, Constants.BTC_CODE);
+    code = code.replace("grs", "btc").replace("groestl", "bit").replace("gro", "sat");
+    return fr.acinq.eclair.CoinUtils.getUnitFromString(code);
   }
 
   /**
