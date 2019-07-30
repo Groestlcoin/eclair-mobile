@@ -383,7 +383,7 @@ public class App extends Application {
       final Crypto.PublicKey pubkey = appKit.eclairKit.nodeParams().privateKey().publicKey();
       final ByteVector placeholderScript = Script.write(Script.pay2wsh(Scripts.multiSig2of2(pubkey, pubkey)));
       final String placeholderAddress = Bech32.encodeWitnessAddress(
-        "mainnet".equals(BuildConfig.CHAIN) ? "bc" : "tb",
+        "mainnet".equals(BuildConfig.CHAIN) ? "grs" : "tgrs",
         (byte) 0,
         Crypto.hash(new SHA256Digest(), placeholderScript));
       final Tuple2<Transaction, Satoshi> tx_fee = Await.result(appKit.electrumWallet.sendAll(placeholderAddress, feesPerKw), Duration.create(20, "seconds"));
