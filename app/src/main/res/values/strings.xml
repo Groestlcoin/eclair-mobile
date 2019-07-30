@@ -407,7 +407,7 @@
   <!-- //////////////// About //////////////////// -->
 
   <string name="about_general_title">About Groestlcoin Testnet Eclair Mobile</string>
-  <string name="about_general_text">An advanced Lightning/Groestlcoin mobile wallet by Hash Engineering Solutions (based on eclair mobile by ACINQ). It relies on Electrum-GRS servers for access to the Groestlcoin network.\n\nFees are retrieved from the BitGo API. Exchange rates are retrieved from the Blockchain.info api. Note that this conversion to fiat may not be accurate.\n\nThis software is compliant with the BOLT specifications (Lightning Network standard).</string>
+  <string name="about_general_text">An advanced Lightning/Groestlcoin mobile wallet by Hash Engineering Solutions (based on eclair mobile by ACINQ). It relies on Electrum-GRS servers for access to the Groestlcoin network.\n\nExchange rates are retrieved from the bitcoinaverage.com api. Note that this conversion to fiat may not be accurate.\n\nThis software is compliant with the BOLT specifications (Lightning Network standard).</string>
   <string name="about_version">Current version</string>
   <string name="about_faq"><![CDATA[
     <p>Any questions? Check <a href="https://groestlcoin.org/forum/">the Forum</a></p>
