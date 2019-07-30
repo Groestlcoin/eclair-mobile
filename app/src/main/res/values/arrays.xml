@@ -70,11 +70,12 @@
     <item>Milli-Groestlcoin (0.001 GRS)</item>
     <item>Groestlcoin</item>
   </string-array>
+  <!-- These should rename as bitcoin codes because eclair-core uses these instead of grs, gro, etc -->
   <string-array name="btc_unit_values">
-    <item>gro</item>
-    <item>groestls</item>
-    <item>mgrs</item>
-    <item>grs</item>
+    <item>sat</item>
+    <item>bits</item>
+    <item>mbtc</item>
+    <item>btc</item>
   </string-array>
   <string-array name="btc_pattern_labels">
     <item>2 decimals</item>
