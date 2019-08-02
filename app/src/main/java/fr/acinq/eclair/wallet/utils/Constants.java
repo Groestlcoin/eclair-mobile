@@ -133,6 +133,7 @@ public interface Constants {
 
   String SATOSHI_CODE = "sat";
   String BTC_CODE = "btc";
+  String SATOSHI_GRO = "gro";
 
   /* ----------- FEE RATING ------------ */
 
