@@ -179,7 +179,7 @@ public abstract class ChannelsBackupBaseActivity extends EclairActivity {
     super.onActivityResult(requestCode, resultCode, data);
     if (requestCode == GDRIVE_REQUEST_CODE_SIGN_IN) {
       if (resultCode != RESULT_OK) {
-        log.info("Google Drive sign-in failed with code {}");
+        log.info("Google Drive sign-in failed with code {}", resultCode);
         applyGdriveAccessDenied();
         return;
       }
