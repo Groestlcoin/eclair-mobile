@@ -47,7 +47,7 @@ import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 
 /**
- * Saves the eclair.sqlite backup file to an external storage folder (root/Eclair Mobile) and/or to Google Drive,
+ * Saves the eclair.sqlite backup file to an external storage folder (root/Groestlcoin Testnet Eclair Mobile) and/or to Google Drive,
  * depending on the user's preferences. Local backup is mandatory.
  */
 public class ChannelsBackupWorker extends Worker {
@@ -67,7 +67,7 @@ public class ChannelsBackupWorker extends Worker {
     final String key = getInputData().getString(BACKUP_KEY_INPUT);
 
     if (!WalletUtils.getEclairDBFile(getApplicationContext()).exists()) {
-      log.info("no eclair db file yet, aborting...");
+      log.info("no groestlcoin testnet eclair db file yet, aborting...");
       return Result.success();
     }
 
@@ -110,7 +110,7 @@ public class ChannelsBackupWorker extends Worker {
   }
 
   /**
-   * This method creates an encrypted byte array from the eclair DB backup file (.bak) created by the eclair-core backup mechanism.
+   * This method creates an encrypted byte array from the tgrs-eclair DB backup file (.bak) created by the eclair-core backup mechanism.
    * <p>
    * This backup is encrypted with the wallet's pk.
    *

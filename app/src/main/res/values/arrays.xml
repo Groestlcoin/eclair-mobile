@@ -65,11 +65,12 @@
     <item>USD</item>
   </string-array>
   <string-array name="btc_unit_labels">
-    <item>Satoshi (0.00000001 BTC)</item>
-    <item>Bits (0.000001 BTC)</item>
-    <item>Milli-Bitcoin (0.001 BTC)</item>
-    <item>Bitcoin</item>
+    <item>Gro (0.00000001 GRS)</item>
+    <item>Groestls (0.000001 GRS)</item>
+    <item>Milli-Groestlcoin (0.001 GRS)</item>
+    <item>Groestlcoin</item>
   </string-array>
+  <!-- These should rename as bitcoin codes because eclair-core uses these instead of grs, gro, etc -->
   <string-array name="btc_unit_values">
     <item>sat</item>
     <item>bits</item>

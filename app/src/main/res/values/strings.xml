@@ -19,7 +19,7 @@
   <!-- //////////////// Application Strings //////////////////// -->
 
   <string name="lang">eng</string>
-  <string name="app_name">Eclair Mobile</string>
+  <string name="app_name">Groestlcoin Eclair</string>
   <string name="notification_channel_closing_ln_channel_name">Channel Closing</string>
   <string name="notification_channel_closing_ln_channel_desc">Notification displayed when a channel is closing, be it cooperative or not.</string>
   <string name="notification_channel_restart_name">Background watcher</string>
@@ -42,7 +42,7 @@
   <string name="home_channel_paste_uri">Paste a node URI</string>
   <string name="home_channel_scan_uri">Scan a node URI</string>
   <string name="home_channel_random">Random node</string>
-  <string name="home_channel_acinq">ACINQ node</string>
+  <string name="home_channel_acinq">Groestlcoin node</string>
   <string name="home_sync_progress">%1$d%%</string>
   <string name="home_sync_progress_desc">Updating the lightning network map</string>
   <string name="home_sync_progress_about"><![CDATA[
@@ -52,13 +52,13 @@
   ]]></string>
   <string name="home_no_backup">NO BACKUP</string>
   <string name="home_backup_disabled_icon_desc">Channels backup is disabled!</string>
-  <string name="home_electrum_establishing">Establishing connection with a default electrum server…</string>
+  <string name="home_electrum_establishing">Establishing connection with a default electrum-grs server…</string>
   <string name="home_electrum_establishing_custom">Establishing connection with %1$s…</string>
   <string name="home_electrum_syncing">Syncing from %1$s…</string>
 
   <string name="home_warning_runnable_background_title">Background service</string>
   <string name="home_warning_runnable_background_message"><![CDATA[
-  It seems that Eclair Mobile has not been able to run in background lately. Make sure that your phone does not aggressively optimize this application.
+  It seems that Groestlcoin Testnet Eclair Mobile has not been able to run in background lately. Make sure that your phone does not aggressively optimize this application.
   <br /><br />
   Some vendors like <b>Nokia</b>, <b>Xiaomi</b>, <b>Huawei</b> or <b>Samsung</b> run overzealous custom battery savers preventing non white-listed apps to run in background.
   <br /><br />
@@ -92,14 +92,14 @@
   <!-- //////////////// Startup /////////////////// -->
 
   <string name="startup_update_wallet_title">Update available</string>
-  <string name="startup_update_wallet_message">An new version of Eclair Mobile has been released.\n\nPlease keep this app up to date to enjoy the latest features, bug fixes, and improvements!</string>
+  <string name="startup_update_wallet_message">An new version of Groestlcoin Testnet Eclair Mobile has been released.\n\nPlease keep this app up to date to enjoy the latest features, bug fixes, and improvements!</string>
 
   <string name="start_enter_password">Enter PIN to unlock</string>
   <string name="start_error_restart">Restart</string>
   <string name="start_error_faq_link">Check our FAQ for help.</string>
-  <string name="start_error_unreadable_seed">Seed is not readable; eclair can not start.</string>
+  <string name="start_error_unreadable_seed">Seed is not readable; groestlcoin testnet eclair can not start.</string>
   <string name="start_error_connectivity">Your device is not connected to the internet, or has a very slow connection. Please check your network settings.</string>
-  <string name="start_error_timeout">Eclair could not start within a reasonable time frame. Please check your network settings.</string>
+  <string name="start_error_timeout">Groestlcoin Testnet Eclair could not start within a reasonable time frame. Please check your network settings.</string>
   <string name="start_error_wrong_password">Wrong PIN.</string>
   <string name="start_error_improper">App did not initialize properly, restarting…</string>
   <string name="start_error_generic">Could not start eclair.</string>
@@ -138,7 +138,7 @@
   <string name="createwallet_success">Your wallet has been successfully created!</string>
 
   <string name="wallet_passphrase_title">Passphrase</string>
-  <string name="wallet_passphrase_instructions">Eclair supports passphrase. If you don\'t know what this is, or if you wallet does not have a passphrase, leave this field blank, and click Next.</string>
+  <string name="wallet_passphrase_instructions">Groestlcoin Testnet Eclair supports passphrase. If you don\'t know what this is, or if you wallet does not have a passphrase, leave this field blank, and click Next.</string>
   <string name="wallet_passphrase_confirm_title">Confirm Passphrase</string>
   <string name="wallet_passphrase_input_hint">Passphrase…</string>
   <string name="wallet_passphrase_confirm_input_hint">Confirm Passphrase…</string>
@@ -158,7 +158,7 @@
   <!-- //////////////// Restore Channels /////////////////// -->
 
   <string name="restorechannels_title">Restore Lightning channels</string>
-  <string name="restorechannels_explanations">If you already used Eclair Mobile with this seed, you may have remaining active channels that could be restored.</string>
+  <string name="restorechannels_explanations">If you already used Groestlcoin Testnet Eclair Mobile with this seed, you may have remaining active channels that could be restored.</string>
   <string name="restorechannels_hash">[hash]: %1$s</string>
   <string name="restorechannels_check_button">Scan for backup</string>
   <string name="restorechannels_confirm_button">Restore this backup</string>
@@ -174,7 +174,7 @@
   <string name="restorechannels_request_gdrive_access">Check on Google Drive</string>
   <string name="restorechannels_request_gdrive_unavailable">Google Drive is not available on this device.</string>
   <string name="restorechannels_gdrive_wait">Requesting access to Google Drive…</string>
-  <string name="restorechannels_error">A backup was found but could not be read.\n\nOrigin: %1$s\nError: %2$s\n\nContact support at mobile@acinq.co</string>
+  <string name="restorechannels_error">A backup was found but could not be read.\n\nOrigin: %1$s\nError: %2$s\n\nContact support at groestlcoin@gmail.com</string>
   <string name="restorechannels_error_generic">There was an error when looking for backup. Please try again.</string>
   <string name="restorechannels_error_no_local_access_toast">Please grant access to your disk to check for local backups.</string>
   <string name="restorechannels_error_external_storage_toast">External storage is not available! Could not check for local backup.</string>
@@ -328,8 +328,8 @@
   <!-- //////////////// Send Payment //////////////////// -->
 
   <string name="payment_invalid_lightning">This is not a valid %1$s Lightning payment request.</string>
-  <string name="payment_invalid_onchain">This is not a valid %1$s Bitcoin address.</string>
-  <string name="payment_invalid_generic">This is not a valid payment address.\n\nPlease use a %1$s Bitcoin or Lightning payment request.</string>
+  <string name="payment_invalid_onchain">This is not a valid %1$s Groestlcoin address.</string>
+  <string name="payment_invalid_generic">This is not a valid payment address.\n\nPlease use a %1$s Groestlcoin or Lightning payment request.</string>
   <string name="payment_ln_invalid_chain">This Lightning payment request is not valid on %1$s.</string>
   <string name="payment_ln_expiry_outdated">This payment has expired.</string>
   <string name="payment_pick_onchain">Pay on-chain</string>
@@ -339,9 +339,9 @@
   <string name="payment_empty_wallet">Empty wallet</string>
   <string name="payment_empty_wallet_disclaimer">Funds in your Lightning channels will not be included. You might want to close them first.</string>
   <string name="payment_fees_custom">Custom</string>
-  <string name="payment_fees_slow">Slow (12h)</string>
-  <string name="payment_fees_medium">Medium (2h)</string>
-  <string name="payment_fees_fast">Fast (20min)</string>
+  <string name="payment_fees_slow">Slow (3min)</string>
+  <string name="payment_fees_medium">Medium (2min)</string>
+  <string name="payment_fees_fast">Fast (1min)</string>
   <string name="payment_description">Desc.</string>
   <string name="payment_destination_address">To</string>
   <string name="payment_fees">Fees</string>
@@ -406,42 +406,41 @@
 
   <!-- //////////////// About //////////////////// -->
 
-  <string name="about_general_title">About Eclair Mobile</string>
-  <string name="about_general_text">An advanced Lightning/Bitcoin mobile wallet by ACINQ. It relies on Electrum servers for access to the Bitcoin network.\n\nFees are retrieved from the BitGo API. Exchange rates are retrieved from the Blockchain.info api. Note that this conversion to fiat may not be accurate.\n\nThis software is compliant with the BOLT specifications (Lightning Network standard).</string>
+  <string name="about_general_title">About Groestlcoin Testnet Eclair Mobile</string>
+  <string name="about_general_text">An advanced Lightning/Groestlcoin mobile wallet by Hash Engineering Solutions (based on eclair mobile by ACINQ). It relies on Electrum-GRS servers for access to the Groestlcoin network.\n\nExchange rates are retrieved from the bitcoinaverage.com api. Note that this conversion to fiat may not be accurate.\n\nThis software is compliant with the BOLT specifications (Lightning Network standard).</string>
   <string name="about_version">Current version</string>
   <string name="about_faq"><![CDATA[
-    <p>Any questions? Check <a href="https://github.com/ACINQ/eclair-mobile/wiki/FAQ">the FAQ</a></p>
-    You can also join <a href="https://gitter.im/ACINQ/eclair-mobile">our Gitter chat</a>.
+    <p>Any questions? Check <a href="https://groestlcoin.org/forum/">the Forum</a></p>
   ]]></string>
-  <string name="about_acinq_title">About ACINQ</string>
+  <string name="about_acinq_title">About Groestlcoin</string>
   <string name="about_acinq_text"><![CDATA[
-    <p>ACINQ is a Bitcoin technology company, and a proud member of the Lightning development community.</p>
-    https://acinq.co
+    <p>Groestlcoin was the first coin that activated Segwit.</p>
+    https://groestlcoin.org
     <br /><br />
-    https://github.com/ACINQ/eclair-mobile
+    https://github.com/groestlcoin/eclair-mobile
     ]]>
   </string>
   <string name="about_stores">Looking for something to buy?</string>
   <string name="about_lightning_network_stores"><![CDATA[
-    <a href="https://acinq.co/mobile/lightningnetworkstores/?safemode=true">Lightning Network Stores</a>
+    <a href="https://testnet.grspay.com/">GRSPay</a>
     <br />
-    This independent service lists and ranks shops that accept Lightning payments.
+    GRSPay is a self-hosted, open-source cryptocurrency payment processor. It's secure, private, censorship-resistant and free.
   ]]></string>
 
   <!-- //////////////// Network Infos //////////////////// -->
 
-  <string name="networkinfos_title_bitcoin">Bitcoin Network</string>
+  <string name="networkinfos_title_bitcoin">Groestlcoin Network</string>
   <string name="networkinfos_title_lightning">Lightning Network</string>
   <string name="networkinfos_nodeid_label">Your node id</string>
   <string name="networkinfos_blockcount_label">Block height</string>
   <string name="networkinfos_feerate_label">Current fee rate</string>
-  <string name="networkinfos_electrum_address_label">Current electrum server</string>
+  <string name="networkinfos_electrum_address_label">Current electrum-grs server</string>
   <string name="networkinfos_electrum_address_connecting">Establishing connection…</string>
   <string name="networkinfos_electrum_address_connecting_to_custom">Attempting connection to %1$s…</string>
   <string name="networkinfos_electrum_address_set_custom">Set custom server…</string>
   <string name="networkinfos_electrum_address_change_custom">Change custom server…</string>
   <string name="networkinfos_electrum_confirm_message"><![CDATA[You will now connect to <b>%1$s</b><br/><br/>Restarting…]]></string>
-  <string name="networkinfos_electrum_confirm_message_default"><![CDATA[Restarting with preset electrum…]]></string>
+  <string name="networkinfos_electrum_confirm_message_default"><![CDATA[Restarting with preset electrum-grs…]]></string>
   <string name="networkinfos_block"><![CDATA[%1$s&nbsp;&nbsp;<font color="#888888"><small>//&nbsp;&nbsp;%2$s</small></font>]]></string>
   <string name="networkinfos_networkchannels_label">Known channels in network</string>
   <string name="networkinfos_wallet_title">Wallet</string>
@@ -475,7 +474,7 @@
 
   <!-- //////////////// General //////////////////// -->
 
-  <string name="btc_fee_unit">sat/byte</string>
+  <string name="btc_fee_unit">gro/byte</string>
 
   <!-- //////////////// Pin dialogs //////////////////// -->
 
@@ -492,18 +491,18 @@
   <string name="prefs_cat_advanced">Advanced</string>
   <string name="prefs_fiat_currency">Fiat currency</string>
   <string name="prefs_fiat_currency_dialog">Display in fiat currency</string>
-  <string name="prefs_btc_unit">Bitcoin unit</string>
+  <string name="prefs_btc_unit">Groestlcoin unit</string>
   <string name="prefs_btc_decimals">Number of decimals shown</string>
   <string name="prefs_change_password">Change the app PIN</string>
   <string name="prefs_change_password_desc">Seed will be re-encrypted with a new PIN</string>
   <string name="prefs_pin_title">Ask for PIN before payment</string>
   <string name="prefs_pin_default_info">Uses the PIN encrypting your wallet</string>
   <string name="prefs_lightning_max_fee">Lightning Fee Protection</string>
-  <string name="prefs_lightning_max_fee_desc">Prevent making a Lightning payment if the fee would be too high. Limit is set to 3% (with a tolerance if fee is smaller than 21 satoshis to allow tiny payments).</string>
+  <string name="prefs_lightning_max_fee_desc">Prevent making a Lightning payment if the fee would be too high. Limit is set to 3% (with a tolerance if fee is smaller than 21 gros to allow tiny payments).</string>
   <string name="prefs_lightning_enable_inbound">Enable receive over Lightning</string>
-  <string name="prefs_lightning_enable_inbound_desc">If this feature is enabled, you need to make sure that your phone doesn\'t stay without internet connectivity for more than two weeks straight.</string>
+  <string name="prefs_lightning_enable_inbound_desc">If this feature is enabled, you need to make sure that your phone doesn\'t stay without internet connectivity for more than 1,5 days straight.</string>
   <string name="prefs_lightning_inbound_warning_title">Notice</string>
-  <string name="prefs_lightning_inbound_warning_message">Congratulations! You can now receive payment over Lightning.\n\nEclair Mobile will watch your channels in the background and will warn you if needed.\n\nNote that you need to make sure that your phone doesn\'t stay without internet connectivity for more than two weeks straight.</string>
+  <string name="prefs_lightning_inbound_warning_message">Congratulations! You can now receive payment over Lightning.\n\nGroestlcoin Testnet Eclair Mobile will watch your channels in the background and will warn you if needed.\n\nNote that you need to make sure that your phone doesn\'t stay without internet connectivity for more than 1,5 days straight.</string>
   <string name="prefs_lightning_error_not_authorized_title">Incompatible channels</string>
   <string name="prefs_lightning_error_not_authorized_message">Some of your existing channels have a "retaliation window" smaller than %1$d blocks, please close these channels first.\n\nAll Newly created channels will have a safe configuration.</string>
   <string name="prefs_payment_request_default_description">Payment request default description</string>
@@ -523,7 +522,7 @@
 
   <!-- //////////////// Scanner messages //////////////////// -->
 
-  <string name="scan_title_invoice">Scan a QR code containing a Bitcoin address or a Lightning payment request.</string>
+  <string name="scan_title_invoice">Scan a QR code containing a Groestlcoin address or a Lightning payment request.</string>
   <string name="scan_title_ln_uri">Scan the address of a Lightning Network node.</string>
 
   <!-- //////////////// Close Channel Dialog /////////////////// -->
@@ -544,7 +543,7 @@
 
   <!-- //////////////// Custom Electrum Server Dialog /////////////////// -->
 
-  <string name="dialog_electrum_checkbox">Use a custom Electrum server</string>
+  <string name="dialog_electrum_checkbox">Use a custom Electrum-GRS server</string>
   <string name="dialog_electrum_warning">Server must have a valid certificate.</string>
   <string name="dialog_electrum_hint">Server address (host:port)</string>
   <string name="dialog_electrum_error">Invalid address</string>
@@ -552,7 +551,7 @@
   <!-- //////////////// Setup Channels Backup /////////////////// -->
 
   <string name="setupbackup_title">Safety first!</string>
-  <string name="setupbackup_instructions">Eclair Mobile needs write access to your device to make secure local backups.\n\nThis makes your wallet survive an app uninstall.</string>
+  <string name="setupbackup_instructions">Groestlcoin Testnet Eclair Mobile needs write access to your device to make secure local backups.\n\nThis makes your wallet survive an app uninstall.</string>
   <string name="setupbackup_local">Enable local backups (required)</string>
   <string name="setupbackup_local_required">App needs access to the disk to create backups</string>
   <string name="setupbackup_gdrive">Backup on Google Drive</string>
@@ -610,8 +609,8 @@
   <string name="logging_local_directory">Files are stored in %1$s</string>
   <string name="logging_local_view_logs">View logs</string>
   <string name="logging_local_share_logs">Share…</string>
-  <string name="logging_local_share_logs_title">Share Eclair Mobile logs</string>
-  <string name="logging_local_share_logs_subject">Eclair Mobile logs</string>
+  <string name="logging_local_share_logs_title">Share Groestlcoin Testnet Eclair Mobile logs</string>
+  <string name="logging_local_share_logs_subject">Groestlcoin Testnet Eclair Mobile logs</string>
   <string name="logging_papertrailapp_label">PaperTrail</string>
   <string name="logging_papertrailapp_desc">Logs will be sent over to your Papertrailapp account. Not great for privacy, but real handy for debugging.</string>
   <string name="logging_papertrailapp_host_hint">Papertrail host</string>
@@ -636,10 +635,10 @@
   <string name="notif_channelclosing_bigmessage_localclosing">You or your wallet unilaterally closed this channel. You will receive your funds in %1$d blocks. This value is dependent on the channel configuration.</string>
 
   <string name="notif_electrum_check_reminder_title">Unable to watch your Lightning channels</string>
-  <string name="notif_electrum_check_reminder_message">To protect the funds in your Lightning channels, Eclair needs to watch the blockchain once in a while, but has been unable to do so the last few days. Make sure that you have a working internet connection.</string>
+  <string name="notif_electrum_check_reminder_message">To protect the funds in your Lightning channels, Groestlcoin Testnet Eclair needs to watch the blockchain once in a while, but has been unable to do so the last few days. Make sure that you have a working internet connection.</string>
 
   <string name="notif_electrum_check_alert_title">Cheating attempt detected</string>
-  <string name="notif_electrum_check_alert_message">Start Eclair Mobile for automated retaliation.</string>
+  <string name="notif_electrum_check_alert_message">Start Groestlcoin Testnet Eclair Mobile for automated retaliation.</string>
 
   <string name="notif_received_ln_payment_title">Received %1$s payment…</string>
   <string name="notif_received_ln_payment_message">Description: %1$s</string>
@@ -655,7 +654,7 @@
 
   <string name="receivepayment_onchain_title">On-chain</string>
   <string name="receivepayment_lightning_title">Lightning</string>
-  <string name="receivepayment_onchain_address_title">Your Bitcoin address</string>
+  <string name="receivepayment_onchain_address_title">Your Groestlcoin address</string>
   <string name="receivepayment_onchain_image_desc">On-chain address QR Code</string>
   <string name="receivepayment_onchain_wait">Retrieving fresh address…</string>
   <string name="receivepayment_lightning_inbound_disabled">You must enable this feature in the settings first.</string>
@@ -677,7 +676,7 @@
   <string name="receivepayment_lightning_edit_pr">Edit request…</string>
   <string name="receivepayment_lightning_error">Error in payment request…</string>
   <string name="receivepayment_onchain_share">Share this address…</string>
-  <string name="receivepayment_onchain_share_subject">Pay to this Bitcoin address</string>
+  <string name="receivepayment_onchain_share_subject">Pay to this Groestlcoin address</string>
   <string name="receivepayment_lightning_share">Share this payment request…</string>
   <string name="receivepayment_lightning_share_subject">Pay this Lightning payment request</string>
 

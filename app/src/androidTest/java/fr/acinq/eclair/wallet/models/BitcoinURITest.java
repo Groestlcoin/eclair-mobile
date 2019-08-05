@@ -27,9 +27,9 @@ import org.junit.Test;
 public class BitcoinURITest {
 
   private final String no_scheme = "";
-  private final String valid_scheme = "bitcoin:";
-  private final String acceptable_scheme_ = "bitcoin://";
-  private final String invalid_scheme = "bitcoinmagic://";
+  private final String valid_scheme = "groestlcoin:";
+  private final String acceptable_scheme_ = "groestlcoin://";
+  private final String invalid_scheme = "groestlcoinmagic://";
 
   private final String valid_address = "2MxGZTPhfGqcU4s8jn7FAM3AZCmAjaQTo1n";
   private final String invalid_address = "2MxGZTPhfGqcU4s8jn7FAM3AZCmAjaQTo1ncU4s8jn";

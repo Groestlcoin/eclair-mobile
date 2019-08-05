@@ -86,19 +86,35 @@ public class WalletUtils {
   private final static String DECIMAL_SEPARATOR = String.valueOf(new DecimalFormat().getDecimalFormatSymbols().getDecimalSeparator());
   private static NumberFormat fiatFormat;
 
+  private static float GRS_BTC = -1.0f;
   private static void saveCurrency(final SharedPreferences.Editor editor, final JSONObject o, final String fiatCode) {
     float rate = -1.0f;
     try {
-      rate = (float) o.getJSONObject(fiatCode).getDouble("last");
+      rate = (float) o.getJSONObject("BTC"+fiatCode).getDouble("last");
     } catch (Exception e) {
       log.debug("could not read {} from price api response", fiatCode);
     }
-    App.RATES.put(fiatCode, rate);
+    if(GRS_BTC != -1)
+      App.RATES.put(fiatCode, rate * GRS_BTC);
+
     editor.putFloat(Constants.SETTING_LAST_KNOWN_RATE_BTC_ + fiatCode, rate);
   }
 
+  private static void saveGRSCurrency(final SharedPreferences.Editor editor, final JSONObject o, final String fiatCode) {
+    float rate = -1.0f;
+    try {
+      rate = (float) o.getDouble("last");
+    } catch (Exception e) {
+      log.debug("could not read {} from price api response", fiatCode);
+    }
+    //App.RATES.put(fiatCode, rate);
+    GRS_BTC = rate;
+    editor.putFloat(Constants.SETTING_LAST_KNOWN_RATE_GRS_BTC, rate);
+  }
+
   private static void retrieveRateFromPrefs(final SharedPreferences prefs, final String fiatCode) {
-    App.RATES.put(fiatCode, prefs.getFloat(Constants.SETTING_LAST_KNOWN_RATE_BTC_ + fiatCode, -1.0f));
+    App.RATES.put(fiatCode, prefs.getFloat(Constants.SETTING_LAST_KNOWN_RATE_BTC_ + fiatCode, -1.0f) *
+      prefs.getFloat(Constants.SETTING_LAST_KNOWN_RATE_GRS_BTC, -1.0f));
   }
 
   public static void retrieveRatesFromPrefs(final SharedPreferences prefs) {
@@ -124,6 +140,13 @@ public class WalletUtils {
     retrieveRateFromPrefs(prefs, "THB");
     retrieveRateFromPrefs(prefs, "TWD");
     retrieveRateFromPrefs(prefs, "USD");
+  }
+
+  public static void handleGRSExchangeRateResponse(final SharedPreferences prefs, @NonNull final ResponseBody body) throws IOException, JSONException {
+    final SharedPreferences.Editor editor = prefs.edit();
+    JSONObject json = new JSONObject(body.string());
+    saveGRSCurrency(editor, json, "GRSBTC"); // australian dollar
+    editor.apply();
   }
 
   public static void handleExchangeRateResponse(final SharedPreferences prefs, @NonNull final ResponseBody body) throws IOException, JSONException {
@@ -159,7 +182,7 @@ public class WalletUtils {
       String uri = PreferenceManager.getDefaultSharedPreferences(v.getContext())
         .getString(Constants.SETTING_ONCHAIN_EXPLORER, Constants.DEFAULT_ONCHAIN_EXPLORER);
       try {
-        if (uri != null && !uri.endsWith("/")) {
+        if (uri != null && !uri.endsWith("/") && !uri.endsWith("?")) {
           uri += "/";
         }
         Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(uri + txId));
@@ -297,7 +320,9 @@ public class WalletUtils {
   }
 
   public static CoinUnit getPreferredCoinUnit(final SharedPreferences prefs) {
-    return fr.acinq.eclair.CoinUtils.getUnitFromString(prefs.getString(Constants.SETTING_BTC_UNIT, Constants.BTC_CODE));
+    String code = prefs.getString(Constants.SETTING_BTC_UNIT, Constants.BTC_CODE);
+    code = code.replace("grs", "btc").replace("groestl", "bit").replace("gro", "sat");
+    return fr.acinq.eclair.CoinUtils.getUnitFromString(code);
   }
 
   /**
@@ -531,11 +556,11 @@ public class WalletUtils {
           conf.put("eclair.electrum.host", address.getHost());
           conf.put("eclair.electrum.port", address.getPort());
           // custom server certificate must be valid
-          conf.put("eclair.electrum.ssl", "strict");
+          conf.put("eclair.electrum.ssl", "loose");
           return ConfigFactory.parseMap(conf);
         }
       } catch (Exception e) {
-        log.error("could not read custom electrum address=" + prefsElectrumAddress, e);
+        log.error("could not read custom electrum-grs address=" + prefsElectrumAddress, e);
       }
     }
     return ConfigFactory.empty();

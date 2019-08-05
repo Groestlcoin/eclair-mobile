@@ -101,7 +101,7 @@ public class ReceivePaymentFragment extends Fragment implements QRCodeTask.Async
           final Intent shareIntent = new Intent(android.content.Intent.ACTION_SEND);
           shareIntent.setType("text/plain");
           shareIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, getString(R.string.receivepayment_onchain_share_subject));
-          shareIntent.putExtra(Intent.EXTRA_TEXT, "bitcoin:" + address);
+          shareIntent.putExtra(Intent.EXTRA_TEXT, "groestlcoin:" + address);
           startActivity(Intent.createChooser(shareIntent, getString(R.string.receivepayment_onchain_share)));
         }
       });
@@ -264,7 +264,7 @@ public class ReceivePaymentFragment extends Fragment implements QRCodeTask.Async
     if (getActivity() != null && address != null) {
       try {
         ClipboardManager clipboard = (ClipboardManager) getActivity().getSystemService(Context.CLIPBOARD_SERVICE);
-        clipboard.setPrimaryClip(ClipData.newPlainText("Bitcoin payment request", address));
+        clipboard.setPrimaryClip(ClipData.newPlainText("Groestlcoin payment request", address));
         Toast.makeText(getActivity().getApplicationContext(), "Copied to clipboard!", Toast.LENGTH_SHORT).show();
       } catch (Exception e) {
         log.error("failed to copy with cause=" + e.getMessage());

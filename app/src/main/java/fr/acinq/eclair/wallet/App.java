@@ -115,6 +115,7 @@ public class App extends Application {
   private Cancellable pingNode;
 
   private Cancellable exchangeRatePoller;
+  private Cancellable exchangeRatePollerGRS;
   private final OkHttpClient httpClient = new OkHttpClient();
 
   private AtomicReference<ElectrumState> electrumState = new AtomicReference<>(null);
@@ -313,7 +314,7 @@ public class App extends Application {
         @Override
         public void onComplete(final Throwable t, final String txId) {
           if (t != null) {
-            log.warn("could not send bitcoin tx {} with cause {}", txId, t.getMessage());
+            log.warn("could not send groestlcoin tx {} with cause {}", txId, t.getMessage());
             if (!(t instanceof AskTimeoutException)) {
               EventBus.getDefault().post(new BitcoinPaymentFailedEvent(t.getLocalizedMessage()));
             }
@@ -321,7 +322,7 @@ public class App extends Application {
         }
       }, this.system.dispatcher());
     } catch (Throwable t) {
-      log.warn("could not send bitcoin tx with cause {}", t.getMessage());
+      log.warn("could not send groestlcoin tx with cause {}", t.getMessage());
       EventBus.getDefault().post(new BitcoinPaymentFailedEvent(t.getLocalizedMessage()));
     }
   }
@@ -383,7 +384,7 @@ public class App extends Application {
       final Crypto.PublicKey pubkey = appKit.eclairKit.nodeParams().privateKey().publicKey();
       final ByteVector placeholderScript = Script.write(Script.pay2wsh(Scripts.multiSig2of2(pubkey, pubkey)));
       final String placeholderAddress = Bech32.encodeWitnessAddress(
-        "mainnet".equals(BuildConfig.CHAIN) ? "bc" : "tb",
+        "mainnet".equals(BuildConfig.CHAIN) ? "grs" : "tgrs",
         (byte) 0,
         Crypto.hash(new SHA256Digest(), placeholderScript));
       final Tuple2<Transaction, Satoshi> tx_fee = Await.result(appKit.electrumWallet.sendAll(placeholderAddress, feesPerKw), Duration.create(20, "seconds"));
@@ -414,7 +415,7 @@ public class App extends Application {
     if (pingNode != null) pingNode.cancel();
     if (appKit == null || appKit.eclairKit == null || hasChannelWithACINQ()) return;
     if (system != null) {
-      log.info("scheduling connection to ACINQ node");
+      log.info("scheduling connection to Groestlcoin node");
       pingNode = system.scheduler().schedule(
         Duration.Zero(), Duration.create(10, TimeUnit.MINUTES),
         () -> {
@@ -458,6 +459,9 @@ public class App extends Application {
     if (exchangeRatePoller != null) {
       exchangeRatePoller.cancel();
     }
+    if (exchangeRatePollerGRS != null) {
+      exchangeRatePollerGRS.cancel();
+    }
     if (system != null) {
       exchangeRatePoller = system.scheduler().schedule(
         Duration.Zero(), Duration.create(20, TimeUnit.MINUTES),
@@ -477,6 +481,38 @@ public class App extends Application {
               if (body != null) {
                 try {
                   WalletUtils.handleExchangeRateResponse(prefs, body);
+                  prefs.edit().putLong(Constants.SETTING_LAST_KNOWN_RATE_TIMESTAMP, System.currentTimeMillis()).apply();
+                } catch (Throwable t) {
+                  log.error("could not read exchange rate response body", t);
+                } finally {
+                  body.close();
+                }
+              } else {
+                log.warn("exchange rate body is null");
+              }
+            }
+          }
+        }),
+        system.dispatcher());
+
+      exchangeRatePollerGRS = system.scheduler().schedule(
+        Duration.Zero(), Duration.create(20, TimeUnit.MINUTES),
+        () -> httpClient.newCall(new Request.Builder().url(Constants.PRICE_RATE_GRS_API).build()).enqueue(new Callback() {
+          @Override
+          public void onFailure(@NonNull Call call, @NonNull IOException e) {
+            log.warn("exchange rate call failed with cause {}", e.getLocalizedMessage());
+          }
+
+          @Override
+          public void onResponse(@NonNull Call call, @NonNull Response response) {
+            log.debug("exchange rate api responded with {}", response);
+            if (!response.isSuccessful()) {
+              log.warn("exchange rate query responds with error code {}", response.code());
+            } else {
+              final ResponseBody body = response.body();
+              if (body != null) {
+                try {
+                  WalletUtils.handleGRSExchangeRateResponse(prefs, body);
                   prefs.edit().putLong(Constants.SETTING_LAST_KNOWN_RATE_TIMESTAMP, System.currentTimeMillis()).apply();
                 } catch (Throwable t) {
                   log.error("could not read exchange rate response body", t);

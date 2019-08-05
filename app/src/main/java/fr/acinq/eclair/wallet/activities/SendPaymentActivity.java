@@ -151,6 +151,7 @@ public class SendPaymentActivity extends EclairActivity {
     // check that wallet is not desync, or very late compared to chain
     final boolean isBlockHeightCorrect = Globals.blockCount().get() > Constants.MIN_BLOCK_HEIGHT;
     // if this is a LN payment, send button is enabled only if there is at least 1 channel capable of processing the payment.
+    if (app == null || app.getElectrumState() == null) return false;
     final boolean isWalletReady = app.getElectrumState().isConnected && isBlockHeightCorrect && (!isLightningInvoice() || NodeSupervisor.hasOneNormalChannel());
     mBinding.setEnableSendButton(isWalletReady);
     new Handler().postDelayed(this::checkWalletReady, 1000);
@@ -707,7 +708,7 @@ public class SendPaymentActivity extends EclairActivity {
           final BitcoinURI uri = new BitcoinURI(invoiceAsString);
           runOnUiThread(() -> invoiceReadSuccessfully(Left.apply(uri)));
         } catch (Throwable onchainThrow) {
-          if (invoiceAsString.matches("(bitcoin:)(//){0,1}.*")) {
+          if (invoiceAsString.matches("(groestlcoin:)(//){0,1}.*")) {
             // invoice was intended as an onchain payment
             log.debug("could not read on-chain uri {}", invoiceAsString, onchainThrow);
             runOnUiThread(() -> canNotHandlePayment(getString(R.string.payment_invalid_onchain, chain)));

@@ -33,7 +33,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class BitcoinURI {
-  private final static List<String> BITCOIN_PREFIXES = Arrays.asList("bitcoin://", "bitcoin:");
+  private final static List<String> BITCOIN_PREFIXES = Arrays.asList("groestlcoin://", "groestlcoin:");
 
   @NonNull
   public final String address;

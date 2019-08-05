@@ -60,7 +60,7 @@
         <category android:name="android.intent.category.BROWSABLE" />
         <category android:name="android.intent.category.DEFAULT" />
 
-        <data android:scheme="bitcoin" />
+        <data android:scheme="groestlcoin" />
         <data android:scheme="lightning" />
       </intent-filter>
     </activity>

@@ -83,7 +83,7 @@ public class NetworkSyncWorker extends Worker {
     final Context context = getApplicationContext();
 
     if (!WalletUtils.getEclairDBFile(context).exists()) {
-      log.info("no eclair db file yet, aborting...");
+      log.info("no groestlcoin testnet eclair db file yet, aborting...");
       return Result.success();
     }
 

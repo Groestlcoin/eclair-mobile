@@ -40,8 +40,8 @@ public interface Constants {
   /**
    * Minimal blockchain height that the wallet should reach before being considered ready (value depends on the chain used).
    */
-  long MIN_BLOCK_HEIGHT = BuildConfig.CHAIN == "mainnet" ? 500 * 1000L
-    : BuildConfig.CHAIN == "testnet" ? 1000 * 1000L
+  long MIN_BLOCK_HEIGHT = BuildConfig.CHAIN == "mainnet" ? 2500 * 1000L
+    : BuildConfig.CHAIN == "testnet" ? 1225 * 1000L
     : 0;
 
   /* ----------- PERMISSIONS & REQUEST CODES ------------ */
@@ -56,7 +56,7 @@ public interface Constants {
 
   /* ----------- DIR & FILES NAMES ------------ */
 
-  String ECLAIR_BACKUP_DIR = "Eclair Mobile";
+  String ECLAIR_BACKUP_DIR = "Groestlcoin Eclair Mobile";
   String ECLAIR_DATADIR = "eclair-wallet-data";
   String ECLAIR_DB_FILE = "eclair.sqlite";
   String ECLAIR_DB_FILE_BAK = "eclair.sqlite.bak";
@@ -86,6 +86,8 @@ public interface Constants {
   String SETTING_BTC_PATTERN = "btc_pattern";
   String SETTING_DISPLAY_IN_FIAT = "display_in_fiat";
   String SETTING_LAST_KNOWN_RATE_BTC_ = "last_known_rate_btc_";
+  String SETTING_LAST_KNOWN_RATE_GRS_BTC = "last_known_rate_grs_btc";
+
   String SETTING_LAST_KNOWN_RATE_TIMESTAMP = "last_known_rate_timestamp";
 
   // general
@@ -131,6 +133,7 @@ public interface Constants {
 
   String SATOSHI_CODE = "sat";
   String BTC_CODE = "btc";
+  String SATOSHI_GRO = "gro";
 
   /* ----------- FEE RATING ------------ */
 
@@ -181,9 +184,10 @@ public interface Constants {
 
   /* ------------ API URLS ------------ */
 
-  String PRICE_RATE_API = "https://blockchain.info/fr/ticker";
-  NodeURI ACINQ_NODE_URI = NodeURI.parse("03864ef025fde8fb587d989186ce6a4a186895ee44a926bfc370e2c366597a3f8f@node.acinq.co:9735");
-  String WALLET_CONTEXT_SOURCE = "https://acinq.co/mobile/walletcontext.json";
-  String DEFAULT_ONCHAIN_EXPLORER = "https://api.blockcypher.com/v1/btc/main/txs/";
+  String PRICE_RATE_API = "https://apiv2.bitcoinaverage.com/indices/global/ticker/short?crypto=BTC";
+  String PRICE_RATE_GRS_API = "https://apiv2.bitcoinaverage.com/indices/crypto/ticker/GRSBTC";
+  NodeURI ACINQ_NODE_URI = NodeURI.parse("0384dee0ec597a7b8235ccf56c68ffa0af5dae72b3455aa3ecb81c4fc4eef9ef2c@95.179.140.39:9735");
+  String WALLET_CONTEXT_SOURCE = "https://groestlcoin.org/walletcontext.json";
+  String DEFAULT_ONCHAIN_EXPLORER = "https://chainz.cryptoid.info/grs/tx.dws?";
 
 }

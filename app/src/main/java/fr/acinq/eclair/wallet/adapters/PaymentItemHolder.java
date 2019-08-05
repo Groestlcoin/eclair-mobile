@@ -107,7 +107,7 @@ public class PaymentItemHolder extends RecyclerView.ViewHolder implements View.O
       WalletUtils.printAmountInView(mAmountValue, CoinUtils.formatAmountInUnit(new MilliSatoshi(amountMsat), prefUnit, false), amountPrefix);
       mAmountUnit.setText(prefUnit.shortLabel());
       mFees.setText(NumberFormat.getInstance().format(package$.MODULE$.millisatoshi2satoshi(new MilliSatoshi(payment.getFeesPaidMsat())).amount()));
-      mFeesUnit.setText(Constants.SATOSHI_CODE);
+      mFeesUnit.setText(Constants.SATOSHI_GRO);
     }
 
     // amount text color and fees/amount visibility depend on payment's direction and status

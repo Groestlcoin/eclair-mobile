@@ -199,7 +199,7 @@ public class RestoreChannelsBackupActivity extends ChannelsBackupBaseActivity {
               mBinding.setRestoreStep(Constants.RESTORE_BACKUP_RESTORE_DONE);
               runOnUiThread(() -> new Handler().postDelayed(() -> finish(), 4000));
             } catch (IOException e) {
-              log.error("error when moving " + mBestBackup.type + " backup file to eclair datadir: ", e);
+              log.error("error when moving " + mBestBackup.type + " backup file to groestlcoin testnet eclair datadir: ", e);
               runOnUiThread(() -> Toast.makeText(getApplicationContext(), getString(R.string.restorechannels_restoring_error), Toast.LENGTH_LONG).show());
             } finally {
               mBinding.setIsRestoring(false);
