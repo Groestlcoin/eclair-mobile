@@ -56,15 +56,15 @@ public interface Constants {
 
   /* ----------- DIR & FILES NAMES ------------ */
 
-  String ECLAIR_BACKUP_DIR = "Groestlcoin Testnet Eclair Mobile";
+  String ECLAIR_BACKUP_DIR = "Groestlcoin Eclair Mobile";
   String ECLAIR_DATADIR = "tgrs-eclair-wallet-data";
-  String ECLAIR_DB_FILE = "tgrs-eclair.sqlite";
-  String ECLAIR_DB_FILE_BAK = "tgrs-eclair.sqlite.bak";
-  String NETWORK_DB_FILE = "tgrs-network.sqlite";
-  String WALLET_DB_FILE = "tgrs-wallet.sqlite";
+  String ECLAIR_DB_FILE = "eclair.sqlite";
+  String ECLAIR_DB_FILE_BAK = "eclair.sqlite.bak";
+  String NETWORK_DB_FILE = "network.sqlite";
+  String WALLET_DB_FILE = "wallet.sqlite";
   String LOGS_DIR = "logs";
-  String CURRENT_LOG_FILE = "tgrs-eclair-wallet.log";
-  String ARCHIVED_LOG_FILE = "tgrs-eclair-wallet.archive-%i.log";
+  String CURRENT_LOG_FILE = "eclair-wallet.log";
+  String ARCHIVED_LOG_FILE = "eclair-wallet.archive-%i.log";
 
   /* ----------- SETTINGS ------------ */
 
