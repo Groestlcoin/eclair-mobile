@@ -19,7 +19,7 @@
   <PreferenceCategory android:title="@string/prefs_cat_general">
 
     <EditTextPreference
-      android:defaultValue="https://chainz.cryptoid.info/grs-test/tx.dws?"
+      android:defaultValue="https://chainz.cryptoid.info/grs/tx.dws?"
       android:dialogTitle="@string/prefs_onchain_explorer_dialog"
       android:key="onchain_explorer"
       android:title="@string/prefs_onchain_explorer" />
