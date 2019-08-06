@@ -58,7 +58,7 @@
 
   <string name="home_warning_runnable_background_title">Background service</string>
   <string name="home_warning_runnable_background_message"><![CDATA[
-  It seems that Groestlcoin Testnet Eclair Mobile has not been able to run in background lately. Make sure that your phone does not aggressively optimize this application.
+  It seems that Groestlcoin Eclair Mobile has not been able to run in background lately. Make sure that your phone does not aggressively optimize this application.
   <br /><br />
   Some vendors like <b>Nokia</b>, <b>Xiaomi</b>, <b>Huawei</b> or <b>Samsung</b> run overzealous custom battery savers preventing non white-listed apps to run in background.
   <br /><br />
@@ -92,14 +92,14 @@
   <!-- //////////////// Startup /////////////////// -->
 
   <string name="startup_update_wallet_title">Update available</string>
-  <string name="startup_update_wallet_message">An new version of Groestlcoin Testnet Eclair Mobile has been released.\n\nPlease keep this app up to date to enjoy the latest features, bug fixes, and improvements!</string>
+  <string name="startup_update_wallet_message">An new version of Groestlcoin Eclair Mobile has been released.\n\nPlease keep this app up to date to enjoy the latest features, bug fixes, and improvements!</string>
 
   <string name="start_enter_password">Enter PIN to unlock</string>
   <string name="start_error_restart">Restart</string>
   <string name="start_error_faq_link">Check our FAQ for help.</string>
-  <string name="start_error_unreadable_seed">Seed is not readable; groestlcoin testnet eclair can not start.</string>
+  <string name="start_error_unreadable_seed">Seed is not readable; groestlcoin eclair can not start.</string>
   <string name="start_error_connectivity">Your device is not connected to the internet, or has a very slow connection. Please check your network settings.</string>
-  <string name="start_error_timeout">Groestlcoin Testnet Eclair could not start within a reasonable time frame. Please check your network settings.</string>
+  <string name="start_error_timeout">Groestlcoin Eclair could not start within a reasonable time frame. Please check your network settings.</string>
   <string name="start_error_wrong_password">Wrong PIN.</string>
   <string name="start_error_improper">App did not initialize properly, restarting…</string>
   <string name="start_error_generic">Could not start eclair.</string>
@@ -138,7 +138,7 @@
   <string name="createwallet_success">Your wallet has been successfully created!</string>
 
   <string name="wallet_passphrase_title">Passphrase</string>
-  <string name="wallet_passphrase_instructions">Groestlcoin Testnet Eclair supports passphrase. If you don\'t know what this is, or if you wallet does not have a passphrase, leave this field blank, and click Next.</string>
+  <string name="wallet_passphrase_instructions">Groestlcoin Eclair supports passphrase. If you don\'t know what this is, or if you wallet does not have a passphrase, leave this field blank, and click Next.</string>
   <string name="wallet_passphrase_confirm_title">Confirm Passphrase</string>
   <string name="wallet_passphrase_input_hint">Passphrase…</string>
   <string name="wallet_passphrase_confirm_input_hint">Confirm Passphrase…</string>
@@ -158,7 +158,7 @@
   <!-- //////////////// Restore Channels /////////////////// -->
 
   <string name="restorechannels_title">Restore Lightning channels</string>
-  <string name="restorechannels_explanations">If you already used Groestlcoin Testnet Eclair Mobile with this seed, you may have remaining active channels that could be restored.</string>
+  <string name="restorechannels_explanations">If you already used Groestlcoin Eclair Mobile with this seed, you may have remaining active channels that could be restored.</string>
   <string name="restorechannels_hash">[hash]: %1$s</string>
   <string name="restorechannels_check_button">Scan for backup</string>
   <string name="restorechannels_confirm_button">Restore this backup</string>
@@ -406,7 +406,7 @@
 
   <!-- //////////////// About //////////////////// -->
 
-  <string name="about_general_title">About Groestlcoin Testnet Eclair Mobile</string>
+  <string name="about_general_title">About Groestlcoin Eclair Mobile</string>
   <string name="about_general_text">An advanced Lightning/Groestlcoin mobile wallet by Hash Engineering Solutions (based on eclair mobile by ACINQ). It relies on Electrum-GRS servers for access to the Groestlcoin network.\n\nExchange rates are retrieved from the bitcoinaverage.com api. Note that this conversion to fiat may not be accurate.\n\nThis software is compliant with the BOLT specifications (Lightning Network standard).</string>
   <string name="about_version">Current version</string>
   <string name="about_faq"><![CDATA[
@@ -502,7 +502,7 @@
   <string name="prefs_lightning_enable_inbound">Enable receive over Lightning</string>
   <string name="prefs_lightning_enable_inbound_desc">If this feature is enabled, you need to make sure that your phone doesn\'t stay without internet connectivity for more than 1,5 days straight.</string>
   <string name="prefs_lightning_inbound_warning_title">Notice</string>
-  <string name="prefs_lightning_inbound_warning_message">Congratulations! You can now receive payment over Lightning.\n\nGroestlcoin Testnet Eclair Mobile will watch your channels in the background and will warn you if needed.\n\nNote that you need to make sure that your phone doesn\'t stay without internet connectivity for more than 1,5 days straight.</string>
+  <string name="prefs_lightning_inbound_warning_message">Congratulations! You can now receive payment over Lightning.\n\nGroestlcoin Eclair Mobile will watch your channels in the background and will warn you if needed.\n\nNote that you need to make sure that your phone doesn\'t stay without internet connectivity for more than 1,5 days straight.</string>
   <string name="prefs_lightning_error_not_authorized_title">Incompatible channels</string>
   <string name="prefs_lightning_error_not_authorized_message">Some of your existing channels have a "retaliation window" smaller than %1$d blocks, please close these channels first.\n\nAll Newly created channels will have a safe configuration.</string>
   <string name="prefs_payment_request_default_description">Payment request default description</string>
@@ -551,7 +551,7 @@
   <!-- //////////////// Setup Channels Backup /////////////////// -->
 
   <string name="setupbackup_title">Safety first!</string>
-  <string name="setupbackup_instructions">Groestlcoin Testnet Eclair Mobile needs write access to your device to make secure local backups.\n\nThis makes your wallet survive an app uninstall.</string>
+  <string name="setupbackup_instructions">Groestlcoin Eclair Mobile needs write access to your device to make secure local backups.\n\nThis makes your wallet survive an app uninstall.</string>
   <string name="setupbackup_local">Enable local backups (required)</string>
   <string name="setupbackup_local_required">App needs access to the disk to create backups</string>
   <string name="setupbackup_gdrive">Backup on Google Drive</string>
@@ -609,8 +609,8 @@
   <string name="logging_local_directory">Files are stored in %1$s</string>
   <string name="logging_local_view_logs">View logs</string>
   <string name="logging_local_share_logs">Share…</string>
-  <string name="logging_local_share_logs_title">Share Groestlcoin Testnet Eclair Mobile logs</string>
-  <string name="logging_local_share_logs_subject">Groestlcoin Testnet Eclair Mobile logs</string>
+  <string name="logging_local_share_logs_title">Share Groestlcoin Eclair Mobile logs</string>
+  <string name="logging_local_share_logs_subject">Groestlcoin Eclair Mobile logs</string>
   <string name="logging_papertrailapp_label">PaperTrail</string>
   <string name="logging_papertrailapp_desc">Logs will be sent over to your Papertrailapp account. Not great for privacy, but real handy for debugging.</string>
   <string name="logging_papertrailapp_host_hint">Papertrail host</string>
@@ -635,10 +635,10 @@
   <string name="notif_channelclosing_bigmessage_localclosing">You or your wallet unilaterally closed this channel. You will receive your funds in %1$d blocks. This value is dependent on the channel configuration.</string>
 
   <string name="notif_electrum_check_reminder_title">Unable to watch your Lightning channels</string>
-  <string name="notif_electrum_check_reminder_message">To protect the funds in your Lightning channels, Groestlcoin Testnet Eclair needs to watch the blockchain once in a while, but has been unable to do so the last few days. Make sure that you have a working internet connection.</string>
+  <string name="notif_electrum_check_reminder_message">To protect the funds in your Lightning channels, Groestlcoin Eclair needs to watch the blockchain once in a while, but has been unable to do so the last few days. Make sure that you have a working internet connection.</string>
 
   <string name="notif_electrum_check_alert_title">Cheating attempt detected</string>
-  <string name="notif_electrum_check_alert_message">Start Groestlcoin Testnet Eclair Mobile for automated retaliation.</string>
+  <string name="notif_electrum_check_alert_message">Start Groestlcoin Eclair Mobile for automated retaliation.</string>
 
   <string name="notif_received_ln_payment_title">Received %1$s payment…</string>
   <string name="notif_received_ln_payment_message">Description: %1$s</string>
