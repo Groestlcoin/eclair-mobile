@@ -1,3 +1,6 @@
+import java.util.regex.Matcher
+import java.util.regex.Pattern
+
 /*
  * Copyright 2019 ACINQ SAS
  *
@@ -24,30 +27,46 @@ android {
     applicationId "org.groestlcoin.eclair.wallet.mainnet"
     minSdkVersion 21
     targetSdkVersion 28
-    versionCode 50
+    versionCode 480
     versionName "0.4.8"
     testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     multiDexEnabled true
   }
-  buildTypes {
-    release {
+  sourceSets {
+    _testnet {
+      res.srcDirs = ['src/testnet/res']
+      resources.srcDirs = ['src/testnet/resources']
+    }
+  }
+  flavorDimensions "default"
+  productFlavors {
+    mainnet {
+      applicationId = "org.groestlcoin.eclair.wallet.mainnet"
       resValue "string", "CHAIN", CHAIN_MAINNET
       buildConfigField "String", "CHAIN", CHAIN_MAINNET
+    }
+    _testnet {
+      applicationId = "org.groestlcoin.eclair.wallet.testnet"
+      resValue "string", "CHAIN", CHAIN_TESTNET
+      buildConfigField "String", "CHAIN", CHAIN_TESTNET
+    }
+  }
+  buildTypes {
+    release {
       debuggable false
       minifyEnabled false
       proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
     }
     debug {
-      resValue "string", "CHAIN", CHAIN_MAINNET
-      buildConfigField "String", "CHAIN", CHAIN_MAINNET
       debuggable true
     }
     applicationVariants.all { variant ->
       variant.outputs.all { output ->
         def abi = output.getFilter(com.android.build.OutputFile.ABI)
         final String architecture = abi == null ? "universal" : abi
-        final String chain = variant.buildType.resValues.get("CHAIN").value // careful, contains " characters...
-        outputFileName = "${defaultConfig.versionCode}-v${defaultConfig.versionName}-${chain.substring(1, chain.length() - 1)}-$architecture-${variant.buildType.name}.apk"
+        final String chain = getCurrentFlavor() // == "mainnet" ? "mainnet" : "testnet"
+        //final String chain = variant.buildType.resValues.get("CHAIN").value // careful, contains " characters...
+        outputFileName = "${defaultConfig.versionCode}-v${defaultConfig.versionName}-$chain-$architecture-${variant.buildType.name}.apk"
       }
     }
   }
@@ -78,6 +97,29 @@ android {
   compileOptions {
     sourceCompatibility JavaVersion.VERSION_1_8
     targetCompatibility JavaVersion.VERSION_1_8
+  }
+}
+def getCurrentFlavor() {
+  Gradle gradle = getGradle()
+  String  tskReqStr = gradle.getStartParameter().getTaskRequests().toString()
+
+  Pattern pattern;
+
+  if( tskReqStr.contains( "assemble" ) )
+    pattern = Pattern.compile("assemble(\\w+)(Release|Debug)")
+  else
+    pattern = Pattern.compile("generate(\\w+)(Release|Debug)")
+
+  Matcher matcher = pattern.matcher( tskReqStr )
+
+  if( matcher.find() ) {
+    println "flavor found: " + matcher.group(1).toLowerCase()
+    return matcher.group(1).toLowerCase()
+  }
+  else
+  {
+    println "NO MATCH FOUND"
+    return "";
   }
 }
 

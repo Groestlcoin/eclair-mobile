@@ -1,0 +1,53 @@
+<!--
+  ~ Copyright 2019 ACINQ SAS
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<resources>
+
+  <!-- //////////////// Application Strings //////////////////// -->
+
+  <string name="app_name">Groestlcoin Testnet Eclair</string>
+  <string name="home_warning_runnable_background_message"><![CDATA[
+  It seems that Groestlcoin Testnet Eclair Mobile has not been able to run in background lately. Make sure that your phone does not aggressively optimize this application.
+  <br /><br />
+  Some vendors like <b>Nokia</b>, <b>Xiaomi</b>, <b>Huawei</b> or <b>Samsung</b> run overzealous custom battery savers preventing non white-listed apps to run in background.
+  <br /><br />
+  You can check <a href="https://github.com/ACINQ/eclair-mobile/wiki/FAQ">our FAQ</a> for more information.
+  ]]></string>
+  <string name="startup_update_wallet_message">An new version of Groestlcoin Testnet Eclair Mobile has been released.\n\nPlease keep this app up to date to enjoy the latest features, bug fixes, and improvements!</string>
+  <string name="start_error_unreadable_seed">Seed is not readable; groestlcoin testnet eclair can not start.</string>
+  <string name="start_error_timeout">Groestlcoin Testnet Eclair could not start within a reasonable time frame. Please check your network settings.</string>
+  <string name="wallet_passphrase_instructions">Groestlcoin Testnet Eclair supports passphrase. If you don\'t know what this is, or if you wallet does not have a passphrase, leave this field blank, and click Next.</string>
+  <string name="restorechannels_explanations">If you already used Groestlcoin Testnet Eclair Mobile with this seed, you may have remaining active channels that could be restored.</string>
+
+  <string name="about_general_title">About Groestlcoin Testnet Eclair Mobile</string>
+  <string name="about_general_text">An advanced Lightning/Groestlcoin Testnet mobile wallet by Hash Engineering Solutions (based on eclair mobile by ACINQ). It relies on Electrum-GRS servers for access to the Groestlcoin network.\n\nExchange rates are retrieved from the bitcoinaverage.com api. Note that this conversion to fiat may not be accurate.\n\nThis software is compliant with the BOLT specifications (Lightning Network standard).</string>
+  <string name="about_lightning_network_stores"><![CDATA[
+    <a href="https://testnet.grspay.com/">GRSPay</a>
+    <br />
+    GRSPay is a self-hosted, open-source cryptocurrency payment processor. It's secure, private, censorship-resistant and free.
+  ]]></string>
+  <string name="networkinfos_title_bitcoin">Groestlcoin Network (testnet)</string>
+  <string name="networkinfos_title_lightning">Lightning Network (testnet)</string>
+  <string name="prefs_lightning_inbound_warning_message">Congratulations! You can now receive payment over Lightning.\n\nGroestlcoin Testnet Eclair Mobile will watch your channels in the background and will warn you if needed.\n\nNote that you need to make sure that your phone doesn\'t stay without internet connectivity for more than 1,5 days straight.</string>
+
+  <string name="scan_title_invoice">Scan a QR code containing a Groestlcoin Testnet address or a Lightning payment request.</string>
+  <string name="setupbackup_instructions">Groestlcoin Testnet Eclair Mobile needs write access to your device to make secure local backups.\n\nThis makes your wallet survive an app uninstall.</string>
+  <string name="logging_local_share_logs_title">Share Groestlcoin Testnet Eclair Mobile logs</string>
+  <string name="logging_local_share_logs_subject">Groestlcoin Testnet Eclair Mobile logs</string>
+  <string name="notif_electrum_check_reminder_message">To protect the funds in your Lightning channels, Groestlcoin Testnet Eclair needs to watch the blockchain once in a while, but has been unable to do so the last few days. Make sure that you have a working internet connection.</string>
+
+  <string name="notif_electrum_check_alert_message">Start Groestlcoin Testnet Eclair Mobile for automated retaliation.</string>
+</resources>
