@@ -325,7 +325,7 @@
         android:translationX="-26dp"
         android:alpha="@{App.walletContext != null ? 1.0f : .3f}"
         android:enabled="@{App.walletContext != null}"
-        android:visibility="@{node != null &amp;&amp; node.nodeId().equals(Constants.ACINQ_NODE_URI.nodeId()) ? View.VISIBLE : View.GONE}"
+        android:visibility="gone"
         app:layout_constrainedWidth="true"
         app:layout_constraintStart_toEndOf="@id/label_guideline"
         app:layout_constraintTop_toBottomOf="@id/use_all_funds_checkbox" />
