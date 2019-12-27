@@ -126,7 +126,7 @@ public class StartupActivity extends EclairActivity implements EclairActivity.En
 
   private void showError(final String message, final boolean showRestart, final boolean showFAQ) {
     mBinding.startupError.setVisibility(View.VISIBLE);
-    mBinding.startupErrorFaq.setVisibility(showFAQ ? View.VISIBLE : View.GONE);
+    //mBinding.startupErrorFaq.setVisibility(showFAQ ? View.VISIBLE : View.GONE);
     mBinding.startupRestart.setVisibility(showRestart ? View.VISIBLE : View.GONE);
     mBinding.startupErrorText.setText(message);
   }
