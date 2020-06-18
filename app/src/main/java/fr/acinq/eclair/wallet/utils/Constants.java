@@ -189,7 +189,7 @@ public interface Constants {
   String PRICE_RATE_API = "https://apiv2.bitcoinaverage.com/indices/global/ticker/short?crypto=BTC";
   //NodeURI ACINQ_NODE_URI = NodeURI.parse("0384dee0ec597a7b8235ccf56c68ffa0af5dae72b3455aa3ecb81c4fc4eef9ef2c@95.179.140.39:9735");
   //mainnet
-  NodeURI ACINQ_NODE_URI = BuildConfig.CHAIN.equals("mainnet") ? NodeURI.parse("0391c8d0e27fe61ed8cb8784aeae5848bd8b193ea5720dea32ca2694a326fe41f9@104.236.133.196:9735") :
+  NodeURI ACINQ_NODE_URI = BuildConfig.CHAIN.equals("mainnet") ? NodeURI.parse("02c0ef8fad8a9d3176424826367a7f9470feb2ad86fa4634d9454190eda876d0ad@104.236.133.196:9735") :
       NodeURI.parse("0384dee0ec597a7b8235ccf56c68ffa0af5dae72b3455aa3ecb81c4fc4eef9ef2c@95.179.140.39:9735");;
   String PRICE_RATE_GRS_API = "https://apiv2.bitcoinaverage.com/indices/crypto/ticker/GRSBTC";
   String WALLET_CONTEXT_SOURCE = "https://groestlcoin.org/walletcontext.json";
